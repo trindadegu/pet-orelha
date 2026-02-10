@@ -37,11 +37,11 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <h1 className="text-5xl lg:text-7xl font-display font-extrabold text-slate-900 leading-[1.1]">
+              <h1 className="text-5xl lg:text-7xl font-display font-extrabold text-slate-900 dark:text-slate-100 leading-[1.1]">
                 Amor em cada <br/>
                 <span className="text-primary">detalhe</span>
               </h1>
-              <p className="text-lg lg:text-xl text-slate-600 max-w-lg leading-relaxed">
+              <p className="text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
                 Oferecemos os melhores produtos e serviços para o seu pet. De rações premium a banhos relaxantes.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
@@ -87,41 +87,41 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-lg transition-all border border-slate-100">
+            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all border border-slate-100 dark:border-slate-800">
               <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                 <Truck className="h-7 w-7" />
               </div>
               <h3 className="text-xl font-bold mb-2">Entrega Rápida</h3>
-              <p className="text-slate-600">Receba seus produtos em casa com rapidez e segurança.</p>
+              <p className="text-slate-600 dark:text-slate-400">Receba seus produtos em casa com rapidez e segurança.</p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-lg transition-all border border-slate-100">
+            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all border border-slate-100 dark:border-slate-800">
               <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                 <ShieldCheck className="h-7 w-7" />
               </div>
               <h3 className="text-xl font-bold mb-2">Produtos Premium</h3>
-              <p className="text-slate-600">Trabalhamos apenas com as melhores marcas do mercado.</p>
+              <p className="text-slate-600 dark:text-slate-400">Trabalhamos apenas com as melhores marcas do mercado.</p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-lg transition-all border border-slate-100">
+            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all border border-slate-100 dark:border-slate-800">
               <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                 <Heart className="h-7 w-7" />
               </div>
               <h3 className="text-xl font-bold mb-2">Cuidado e Carinho</h3>
-              <p className="text-slate-600">Profissionais apaixonados por animais prontos para atender.</p>
+              <p className="text-slate-600 dark:text-slate-400">Profissionais apaixonados por animais prontos para atender.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Products */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-slate-50 dark:bg-slate-950">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-end mb-10">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Destaques da Loja</h2>
-              <p className="text-slate-600">Os produtos mais amados pelos pets.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-2">Destaques da Loja</h2>
+              <p className="text-slate-600 dark:text-slate-400">Os produtos mais amados pelos pets.</p>
             </div>
             <Link href="/products">
               <Button variant="ghost" className="hidden md:flex group">

@@ -18,6 +18,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 
+import { ThemeToggle } from "./ThemeToggle";
+
 export function Navigation() {
   const [location] = useLocation();
   const { user, logoutMutation } = useAuth();
@@ -34,12 +36,12 @@ export function Navigation() {
   const isActive = (path: string) => location === path;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <PawPrint className="h-8 w-8 text-primary" />
-          <span className="text-2xl font-display font-bold text-primary">PetShop</span>
+          <span className="text-2xl font-display font-bold text-primary uppercase tracking-wider">Orelha</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -49,7 +51,7 @@ export function Navigation() {
               key={link.href} 
               href={link.href}
               className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive(link.href) ? "text-primary font-bold" : "text-slate-600"
+                isActive(link.href) ? "text-primary font-bold" : "text-muted-foreground"
               }`}
             >
               {link.label}
@@ -59,6 +61,7 @@ export function Navigation() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
+          <ThemeToggle />
           {/* Cart */}
           <Link href="/cart">
             <Button variant="ghost" size="icon" className="relative">

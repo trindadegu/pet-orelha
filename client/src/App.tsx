@@ -35,30 +35,34 @@ function Router() {
       </main>
       <footer className="bg-slate-900 text-slate-300 py-12">
         <div className="container mx-auto px-4 text-center">
-          <p className="font-display font-bold text-2xl text-white mb-4">PetShop</p>
+          <p className="font-display font-bold text-2xl text-white mb-4 uppercase tracking-wider">Orelha</p>
           <div className="flex justify-center gap-6 mb-8 text-sm">
             <a href="#" className="hover:text-white transition-colors">Sobre</a>
             <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
             <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
           </div>
-          <p className="text-xs text-slate-500">© 2024 PetShop System. Todos os direitos reservados.</p>
+          <p className="text-xs text-slate-500">© 2024 Orelha. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>
   );
 }
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <AuthProvider>
-          <CartProvider>
-            <Router />
-            <Toaster />
-          </CartProvider>
-        </AuthProvider>
-      </TooltipProvider>
+      <ThemeProvider defaultTheme="light" storageKey="orelha-theme">
+        <TooltipProvider>
+          <AuthProvider>
+            <CartProvider>
+              <Router />
+              <Toaster />
+            </CartProvider>
+          </AuthProvider>
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
