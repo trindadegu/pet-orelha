@@ -1,0 +1,272 @@
+Crie um sistema completo de Petshop em formato de site moderno, minimalista e responsivo. O projeto deve ser organizado, com código limpo, boas práticas e separação de responsabilidades.
+
+Requisitos gerais do projeto
+
+Use HTML, CSS e JavaScript puro (sem frameworks).
+
+O site deve ser 100% responsivo.
+
+Estilo minimalista e moderno:
+
+fundo claro
+
+cores neutras com destaque em roxo (#7c3aed) ou lilás (#a78bfa)
+
+tipografia moderna (Google Sans ou similar)
+
+cards com bordas arredondadas
+
+sombras suaves
+
+animações leves em hover
+
+Deve ter um layout completo com:
+
+Header fixo com menu
+
+Footer com redes sociais
+
+Página inicial com banner + destaques
+
+Páginas obrigatórias
+
+Crie as páginas e seções abaixo:
+
+1) Home
+
+Hero com chamada principal: “Seu pet merece o melhor”
+
+Botões: “Ver produtos” e “Agendar serviço”
+
+Destaques:
+
+Entrega rápida
+
+Produtos premium
+
+Banho e tosa
+
+2) Produtos (com filtros)
+
+Lista de produtos em cards
+
+Cada produto deve ter:
+
+imagem
+
+nome
+
+categoria
+
+preço
+
+botão “Adicionar ao carrinho”
+
+Filtro por categoria:
+
+Ração
+
+Brinquedos
+
+Higiene
+
+Acessórios
+
+3) Carrinho de compras
+
+Deve mostrar:
+
+itens adicionados
+
+quantidade
+
+subtotal
+
+total
+
+Botões:
+
+aumentar e diminuir quantidade
+
+remover item
+
+finalizar compra (simulação)
+
+4) Serviços
+
+Cards com:
+
+Banho
+
+Tosa
+
+Consulta veterinária
+
+Vacinação
+
+Cada serviço deve ter:
+
+descrição
+
+preço
+
+botão “Agendar”
+
+Ao clicar em “Agendar”, abrir um modal com formulário:
+
+nome
+
+telefone
+
+nome do pet
+
+tipo do serviço
+
+data
+
+5) Contato
+
+Formulário com:
+
+nome
+
+email
+
+mensagem
+
+Informações do petshop:
+
+telefone
+
+endereço
+
+horário
+
+6) Cadastro / Login de usuário
+
+Página com abas:
+
+Login
+
+Cadastro
+
+Cadastro deve pedir:
+
+nome completo
+
+email
+
+senha
+
+confirmar senha
+
+Deve validar:
+
+email válido
+
+senha com mínimo de 6 caracteres
+
+senhas iguais
+
+Salvar usuário em localStorage
+
+Login deve autenticar pelo localStorage
+
+Sistema do Administrador (obrigatório)
+
+Crie uma área admin separada com login.
+
+Admin deve conseguir:
+
+Adicionar produto
+
+Editar produto
+
+Remover produto
+
+Ver lista de usuários cadastrados
+
+Ver pedidos simulados (checkout do carrinho)
+
+Regras do admin
+
+Admin tem credenciais fixas:
+
+email: admin@petshop.com
+
+senha: admin123
+
+O admin não pode acessar sem login.
+
+Deve ter um painel com menu lateral:
+
+Produtos
+
+Usuários
+
+Pedidos
+
+Dados e persistência
+
+Use localStorage para salvar:
+
+usuários cadastrados
+
+carrinho
+
+produtos cadastrados pelo admin
+
+pedidos simulados
+
+Se não houver produtos no localStorage, iniciar com produtos padrão.
+
+Estrutura de arquivos (obrigatória)
+
+Crie o projeto com a seguinte organização:
+
+/index.html
+/produtos.html
+/carrinho.html
+/servicos.html
+/contato.html
+/login.html
+/admin.html
+
+/css/style.css
+/js/app.js
+/js/produtos.js
+/js/carrinho.js
+/js/servicos.js
+/js/auth.js
+/js/admin.js
+/js/storage.js
+
+Funcionalidades importantes
+
+O menu deve funcionar em mobile (hamburger).
+
+Mostrar badge no ícone do carrinho com quantidade.
+
+Sistema de notificações (toast) ao:
+
+adicionar produto
+
+remover
+
+finalizar compra
+
+login bem-sucedido
+
+Evitar código repetido (usar funções reutilizáveis).
+
+Não deixar nada quebrado: tudo deve estar funcional.
+
+Entrega final
+
+Ao final, entregue:
+
+Todos os arquivos completos com código.
+
+Produtos de exemplo.
+
+Sistema funcionando no navegador dentro do Replit.
