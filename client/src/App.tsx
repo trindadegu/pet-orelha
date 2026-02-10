@@ -3,16 +3,48 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { AuthProvider } from "@/hooks/use-auth";
+import { CartProvider } from "@/hooks/use-cart";
+import { Navigation } from "@/components/Navigation";
 import NotFound from "@/pages/not-found";
+
+// Pages
+import Home from "@/pages/Home";
+import Products from "@/pages/Products";
+import Services from "@/pages/Services";
+import Cart from "@/pages/Cart";
+import Auth from "@/pages/Auth";
+import Contact from "@/pages/Contact";
+import Admin from "@/pages/Admin";
 
 function Router() {
   return (
-    <Switch>
-      {/* Add pages below */}
-      {/* <Route path="/" component={Home}/> */}
-      {/* Fallback to 404 */}
-      <Route component={NotFound} />
-    </Switch>
+    <div className="flex flex-col min-h-screen">
+      <Navigation />
+      <main className="flex-1">
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/products" component={Products} />
+          <Route path="/services" component={Services} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/auth" component={Auth} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/admin" component={Admin} />
+          <Route component={NotFound} />
+        </Switch>
+      </main>
+      <footer className="bg-slate-900 text-slate-300 py-12">
+        <div className="container mx-auto px-4 text-center">
+          <p className="font-display font-bold text-2xl text-white mb-4">PetShop</p>
+          <div className="flex justify-center gap-6 mb-8 text-sm">
+            <a href="#" className="hover:text-white transition-colors">Sobre</a>
+            <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
+            <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
+          </div>
+          <p className="text-xs text-slate-500">© 2024 PetShop System. Todos os direitos reservados.</p>
+        </div>
+      </footer>
+    </div>
   );
 }
 
@@ -20,8 +52,12 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Router />
+        <AuthProvider>
+          <CartProvider>
+            <Router />
+            <Toaster />
+          </CartProvider>
+        </AuthProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );
