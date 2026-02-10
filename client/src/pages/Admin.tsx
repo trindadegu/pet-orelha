@@ -98,6 +98,17 @@ function ProductsManager() {
     }
   }, [editingProduct, form]);
 
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        form.setValue("image", reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const onSubmit = (data: any) => {
     if (editingProduct) {
       updateProduct.mutate({ id: editingProduct.id, ...data, price: Number(data.price) }, {
@@ -159,12 +170,27 @@ function ProductsManager() {
                 <Input {...form.register("category")} placeholder="Ração, Brinquedos, etc" />
               </div>
               <div className="grid gap-2">
-                <Label>URL da Imagem</Label>
-                <div className="flex gap-2">
-                  <Input {...form.register("image")} />
-                  {form.watch("image") && (
-                    <img src={form.watch("image")} alt="Preview" className="h-10 w-10 rounded border object-cover" />
-                  )}
+                <Label>Imagem do Produto</Label>
+                <div className="flex flex-col gap-4">
+                  <div className="flex gap-2">
+                    <Input 
+                      type="file" 
+                      accept="image/*" 
+                      onChange={handleImageUpload}
+                      className="cursor-pointer"
+                    />
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="flex-1">
+                      <Label className="text-xs text-muted-foreground mb-1 block">Ou use uma URL externa</Label>
+                      <Input {...form.register("image")} placeholder="https://..." />
+                    </div>
+                    {form.watch("image") && (
+                      <div className="h-16 w-16 rounded-lg border overflow-hidden bg-slate-100 dark:bg-slate-800 flex-shrink-0">
+                        <img src={form.watch("image")} alt="Preview" className="h-full w-full object-cover" />
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
               <Button type="submit" className="w-full" disabled={createProduct.isPending || updateProduct.isPending}>
